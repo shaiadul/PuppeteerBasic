@@ -6,7 +6,7 @@ const browser = await puppeteer.launch({
   headless: false,
 });
 
-async function getSentiment(text) {
+export async function getSentiment(text) {
   const sentiment = new Sentiment();
   const result = sentiment.analyze(text);
   return result;
@@ -38,3 +38,4 @@ for (let link of links) {
 }
 
 await browser.close();
+
